@@ -1,9 +1,42 @@
 #!/bin/python3
 
 from itertools import count
+import os
 import random
 
 from numpy import who
+
+ascii_hands = {}
+ascii_hands["pierre"] = '''
+    _______       
+---'   ____)      
+      (_____)     
+      (_____)     
+      (____)      
+---.__(___)       
+'''
+ascii_hands["feuille"] = '''
+    _______       
+---'   ____)____  
+          ______) 
+          _______)
+         _______) 
+---.__________)   
+'''
+ascii_hands["ciseaux"] = '''
+    _______       
+---'   ____)____  
+          ______) 
+       __________)
+      (____)      
+---.__(___)       
+'''
+
+def pfc_combo(pl, ai):
+    res = ascii_hands[pl].split('\n')
+    for i, line in enumerate(ascii_hands[ai].split('\n')):
+        res[i] += " " * 10 + line[::-1].replace("(", ")").replace(")", "(")
+    return '\n'.join(res)
 
 def choose_first():
     buffer = random.randint(0, 10)
@@ -78,6 +111,11 @@ def choose_win(ia_liste, player_liste):
     return ia_choice
 
 def pfc():
+    os.system('clear')
+    print("                  | 0 | 0 |")
+    print(pfc_combo("pierre", "pierre"))
+    print("En attente...")
+    print("\n")
     ia_score = 0
     p_score = 0
     ia_liste = []
@@ -90,37 +128,32 @@ def pfc():
         elif who_win_last == "player":
             ia_choice = choose_win(ia_liste, p_liste)
         who_win_last = "player"
-        p_choice = str(input("Choisir entre pierre | feuille | ciseaux :\n"))
-        print("Ia choice :", ia_choice)
+        p_choice = input("(pierre/feuille/ciseaux): ")
         if (p_choice == ia_choice) :
-            print("NUL")
             p_liste.append(p_choice)
             ia_liste.append(ia_choice)
         elif p_choice == "pierre" and ia_choice == "ciseaux" :
-            print("Player WIN")
             p_score += 1
             p_liste.append(p_choice)
             ia_liste.append(ia_choice)
         elif p_choice == "feuille" and ia_choice == "pierre" :
-            print("Player WIN")
             p_score += 1
             p_liste.append(p_choice)
             ia_liste.append(ia_choice)
         elif p_choice == "ciseaux" and ia_choice == "feuille" :
-            print("Player WIN")
             p_score += 1
             p_liste.append(p_choice)
             ia_liste.append(ia_choice)
         elif p_choice != "ciseaux" and p_choice != "pierre" and p_choice != "feuille" :
-            print("BAD CHOICE, TRY AGAIN")
+            continue
         else:
-            print("Ia WIN")
             ia_score += 1
             who_win_last = "ia"
             p_liste.append(p_choice)
             ia_liste.append(ia_choice)
-        print("PLAYER SCORE :", p_score)
-        print("IA SCORE :", ia_score)
-        print("----------")
-
+        os.system('clear')
+        print("                  | %d | %d |" % (p_score, ia_score))
+        print(pfc_combo(p_choice, ia_choice))
+        print("%s vs. %s" % (p_choice.capitalize(), ia_choice.capitalize()))
+        print("\n")
 pfc()
