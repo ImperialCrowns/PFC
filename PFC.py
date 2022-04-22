@@ -158,7 +158,7 @@ def choose_win(player_liste, does_rep):
                 return "ciseaux", 0
             elif player_confident_choice == "ciseaux" :
                 return "pierre", 0
-    
+
     # Sinon, si l'on a pas assez de données, on choisit un coup random
 
     ia_choice = random.randint(0,2)
@@ -196,6 +196,42 @@ def calcul_percent(p_liste) :
     file_write.write("Pierre : " + str(pierre) + " " + str(pierre / len(p_liste) * 100) + "\n" + "Feuille : " + str(feuille) + " " + str(feuille / len(p_liste) * 100) + "\n" + "Ciseaux : " + str(ciseaux) + " " + str(ciseaux / len(p_liste) * 100) + "\n\n")
     file_write.close()
 
+def get_user_choice():
+
+    '''
+    Entrée : Rien
+    Sortie : String : pierre / feuille / ciseaux / continue / exit
+    Fonction : Demande au joueur de choisir un coup et le retourne
+    '''
+
+    p_choice = input("(pierre/feuille/ciseaux): ")
+    if (not p_choice):
+        return "continue"
+    if p_choice[0] == "p":
+        p_choice = "pierre"
+    elif p_choice[0] == "c":
+        p_choice = "ciseaux"
+    elif p_choice[0] == "f":
+        p_choice = "feuille"
+    elif p_choice[0] == "e":
+        os.system("clear")
+        print("Au revoir !")
+        quit()
+    return p_choice
+
+def print_start_round():
+    os.system('clear')
+    print("                  | 0 | 0 |")
+    print(pfc_combo("pierre", "pierre"))
+    print("En attente...")
+    print("\n")
+
+def print_result_round(p_score, ia_score, p_choice, ia_choice):
+    os.system('clear')
+    print("                  | %d | %d |" % (p_score, ia_score))
+    print(pfc_combo(p_choice, ia_choice))
+    print("%s vs. %s" % (p_choice.capitalize(), ia_choice.capitalize()))
+    print("\n")
 
 def pfc():
 
@@ -210,11 +246,7 @@ def pfc():
 
     # Affichage
 
-    os.system('clear')
-    print("                  | 0 | 0 |")
-    print(pfc_combo("pierre", "pierre"))
-    print("En attente...")
-    print("\n")
+    print_start_round()
 
     # Init variable
 
@@ -240,15 +272,9 @@ def pfc():
 
         # Choix du joueur
 
-        p_choice = input("(pierre/feuille/ciseaux): ")
-        if (not p_choice):
+        p_choice = get_user_choice();
+        if p_choice == "continue":
             continue
-        if p_choice[0] == "p":
-            p_choice = "pierre"
-        elif p_choice[0] == "c":
-            p_choice = "ciseaux"
-        elif p_choice[0] == "f":
-            p_choice = "feuille"
 
         # Win / Draw / Defeat
 
@@ -276,14 +302,13 @@ def pfc():
             ia_liste.append(ia_choice)
 
         # Affichage
-        
-        os.system('clear')
-        print("                  | %d | %d |" % (p_score, ia_score))
-        print(pfc_combo(p_choice, ia_choice))
-        print("%s vs. %s" % (p_choice.capitalize(), ia_choice.capitalize()))
-        print("\n")
+
+        print_result_round(p_score, ia_score, p_choice, ia_choice)
 
     calcul_percent(p_liste)
 
 
-pfc()
+# Fonction main, début du programme
+
+if __name__ == "__main__":
+    pfc()
