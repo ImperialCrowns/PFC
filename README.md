@@ -32,11 +32,11 @@ If you're interested in how the project is organized at a higher level, please c
 ## Our dream team :heart:
 
 Developers
-| [<img src="https://github.com/ZerLock.png?size=85" width=85><br><sub>[Dubosclard Léo]</sub>](https://github.com/ZerLock) | [<img src="https://github.com/ImperialCrowns.png?size=85" width=85><br><sub>[Dzuira Maxime]</sub>](https://github.com/ImperialCrowns) | [<img src="https://github.com/MathiDEV.png?size=85" width=85><br><sub>[Dubosclard Léo]</sub>](https://github.com/MathiDEV) |
+| [<img src="https://github.com/ZerLock.png?size=85" width=85><br><sub>[Dubosclard Léo]</sub>](https://github.com/ZerLock) | [<img src="https://github.com/ImperialCrowns.png?size=85" width=85><br><sub>[Dziura Maxime]</sub>](https://github.com/ImperialCrowns) | [<img src="https://github.com/MathiDEV.png?size=85" width=85><br><sub>[André Mathias]</sub>](https://github.com/MathiDEV) |
 | :---: | :---: | :---: |
 
 Manager
-| [<img src="https://github.com/ImperialCrowns.png?size=85" width=85><br><sub>[ImperialCrowns]</sub>](https://github.com/ImperialCrowns)
+| [<img src="https://github.com/ImperialCrowns.png?size=85" width=85><br><sub>[Dziura Maxime]</sub>](https://github.com/ImperialCrowns)
 | :---: |
 
 
