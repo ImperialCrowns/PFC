@@ -220,6 +220,13 @@ def get_user_choice():
     return p_choice
 
 def print_start_round():
+
+    '''
+    Entrée : Rien
+    Sortie : Rien
+    Fonction : Affiche le début d'un nouveau tour
+    '''
+
     os.system('clear')
     print("                  | 0 | 0 |")
     print(pfc_combo("pierre", "pierre"))
@@ -227,6 +234,13 @@ def print_start_round():
     print("\n")
 
 def print_result_round(p_score, ia_score, p_choice, ia_choice):
+
+    '''
+    Entrée : p_score, ia_score, p_choice, ia_choice
+    Sortie : Rien
+    Fonction : Affiche les résultats du tour actuel
+    '''
+
     os.system('clear')
     print("                  | %d | %d |" % (p_score, ia_score))
     print(pfc_combo(p_choice, ia_choice))
