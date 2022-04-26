@@ -103,7 +103,11 @@ def get_user_choice() -> str :
     Fonction : Demande au joueur de choisir un coup et le retourne
     '''
 
-    p_choice = input("(pierre/feuille/ciseaux): ")
+    try :
+        p_choice = input("(pierre/feuille/ciseaux): ")
+    except :
+        print("\nAu revoir !")
+        quit()
     if (not p_choice):
         return "continue"
     if p_choice[0] == "p":

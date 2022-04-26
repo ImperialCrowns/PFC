@@ -1,7 +1,7 @@
 #!/bin/python3
 
-from display import print_result_round, print_start_round
-from choice import choose_defeat, choose_first, choose_win, get_user_choice
+from src.display import display
+from src.choice import choice
 from src.tools import utils as tools
 
 def pfc() -> None:
@@ -17,7 +17,7 @@ def pfc() -> None:
 
     # Affichage
 
-    print_start_round()
+    display.print_start_round()
 
     # Init variable
 
@@ -34,16 +34,16 @@ def pfc() -> None:
         # Choix de l'IA
 
         if len(ia_liste) == 0:
-            ia_choice = choose_first()
+            ia_choice = choice.choose_first()
         elif who_win_last == "ia":
-            ia_choice, does_rep = choose_defeat(ia_liste, p_liste, does_rep)
+            ia_choice, does_rep = choice.choose_defeat(ia_liste, p_liste, does_rep)
         elif who_win_last == "player":
-            ia_choice, does_rep = choose_win(p_liste, does_rep)
+            ia_choice, does_rep = choice.choose_win(p_liste, does_rep)
         who_win_last = "player"
 
         # Choix du joueur
 
-        p_choice = get_user_choice();
+        p_choice = choice.get_user_choice();
         if p_choice == "continue":
             continue
 
@@ -74,7 +74,7 @@ def pfc() -> None:
 
         # Affichage
 
-        print_result_round(p_score, ia_score, p_choice, ia_choice)
+        display.print_result_round(p_score, ia_score, p_choice, ia_choice)
 
     tools.calcul_percent(p_liste)
 
