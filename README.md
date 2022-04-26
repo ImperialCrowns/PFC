@@ -20,7 +20,7 @@ cd PFC
 
 Executer la commande suivant à la racine du repository
 ```
-python3 PFC.py
+python3 pfc.py ou ./pfc.py
 ```
 
 ## Get involved

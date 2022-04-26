@@ -2,7 +2,7 @@
 
 from display import print_result_round, print_start_round
 from choice import choose_defeat, choose_first, choose_win, get_user_choice
-from tools import utils
+from src.tools import utils as tools
 
 def pfc() -> None:
 
@@ -76,7 +76,7 @@ def pfc() -> None:
 
         print_result_round(p_score, ia_score, p_choice, ia_choice)
 
-    utils.calcul_percent(p_liste)
+    tools.calcul_percent(p_liste)
 
 
 # Fonction main, début du programme

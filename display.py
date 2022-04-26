@@ -1,5 +1,5 @@
 import os
-from ascii_hands import ascii_hands
+from src.ascii.ascii_hands import ascii_hands
 
 
 def pfc_combo(pl : str, ai : str) -> str :

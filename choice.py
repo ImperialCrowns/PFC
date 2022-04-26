@@ -1,5 +1,5 @@
 import random
-from tools import utils
+from src.tools import utils as tools
 
 def choose_first() -> str :
 
@@ -75,8 +75,8 @@ def choose_win(player_liste : list, does_rep : int) -> str :
         # On regarde si l'on peut essayer de prédire le choix du joueur
 
         if len(player_liste) >= 5 :
-            proba = utils.count_choice(player_liste)
-            player_confident_choice = utils.max_liste(proba)
+            proba = tools.count_choice(player_liste)
+            player_confident_choice = tools.max_liste(proba)
             if player_confident_choice == "pierre" :
                 return "feuille", 0
             elif player_confident_choice == "feuille" :
