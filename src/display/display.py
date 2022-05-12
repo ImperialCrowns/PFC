@@ -38,7 +38,7 @@ def print_start_round() -> None:
     '''
 
     os.system('clear')
-    print("                  | 0 | 0 |")
+    print("     Player       | 0 | 0 |       Machine")
     print(pfc_combo("pierre", "pierre"))
     print("En attente...")
     print("\n")
@@ -52,7 +52,7 @@ def print_result_round(p_score : int, ia_score : int, p_choice : str, ia_choice 
     '''
 
     os.system('clear')
-    print("                  | %d | %d |" % (p_score, ia_score))
+    print("     Player       | %d | %d |       Machine" % (p_score, ia_score))
     print(pfc_combo(p_choice, ia_choice))
     print("%s vs. %s" % (p_choice.capitalize(), ia_choice.capitalize()))
     print("\n")
