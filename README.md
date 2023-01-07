@@ -4,7 +4,7 @@ PFC est un jeu en ``Command Line Interface (CLI)`` développer en [Python](https
 
 ## How does it work?
 
-Le jeu se déroule en **Best Of 7** (BO7) où le joueur doit gagner 5 manches contre une **Intelligence Artificielle** (IA) Statique qui base ses coups sur ses coups antérieur ainsi que les coups antérieur du joueur.
+Le jeu se déroule en **Best Of 9** (BO9) où le joueur doit gagner 5 manches contre une **Intelligence Artificielle** (IA) Statique qui base ses coups sur ses coups antérieur ainsi que les coups antérieur du joueur.
 
 ## Getting Started
 
