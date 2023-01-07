@@ -24,7 +24,7 @@ def print_result_round(p_score : int, ia_score : int, p_choice : str, ia_choice 
     '''
 
     os.system('clear')
-    print("                  | %d | %d |" % (p_score, ia_score))
+    print("     Joueur        | %d | %d |          IA" % (p_score, ia_score))
     print(pfc_combo(p_choice, ia_choice))
     print("%s vs. %s" % (p_choice.capitalize(), ia_choice.capitalize()))
     print("\n")
@@ -38,21 +38,8 @@ def print_start_round() -> None:
     '''
 
     os.system('clear')
-    print("                  | 0 | 0 |")
+    print("     Joueur        | %d | %d |          IA" % (0, 0))
     print(pfc_combo("pierre", "pierre"))
     print("En attente...")
     print("\n")
 
-def print_result_round(p_score : int, ia_score : int, p_choice : str, ia_choice : str) -> None :
-
-    '''
-    Entrée : p_score, ia_score, p_choice, ia_choice
-    Sortie : Rien
-    Fonction : Affiche les résultats du tour actuel
-    '''
-
-    os.system('clear')
-    print("                  | %d | %d |" % (p_score, ia_score))
-    print(pfc_combo(p_choice, ia_choice))
-    print("%s vs. %s" % (p_choice.capitalize(), ia_choice.capitalize()))
-    print("\n")

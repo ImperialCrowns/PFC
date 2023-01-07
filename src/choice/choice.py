@@ -86,14 +86,24 @@ def choose_win(player_liste : list, does_rep : int) -> str :
 
     # Sinon, si l'on a pas assez de données, on choisit un coup random
 
-    ia_choice = random.randint(0,2)
-    if ia_choice == 0 :
-        ia_choice = "pierre", 0
-    elif ia_choice == 1:
-        ia_choice = "feuille", 0
-    else:
-        ia_choice = "ciseaux", 0
-    return ia_choice
+    uncommon = random.randint(0,2)
+
+    if uncommon == 0 or uncommon == 1 :
+        if player_liste[-1] == 'pierre':
+            return 'feuille', 0
+        elif player_liste[-1] == 'feuille':
+            return 'ciseaux', 0
+        elif player_liste[-1] == 'ciseaux':
+            return 'pierre', 0
+    else :
+        ia_choice = random.randint(0,2)
+        if ia_choice == 0 :
+            ia_choice = "pierre", 0
+        elif ia_choice == 1:
+            ia_choice = "feuille", 0
+        else:
+            ia_choice = "ciseaux", 0
+        return ia_choice
 
 def get_user_choice() -> str :
 

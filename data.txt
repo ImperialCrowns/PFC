@@ -66,3 +66,59 @@ Pierre : 4 33.33333333333333
 Feuille : 4 33.33333333333333
 Ciseaux : 4 33.33333333333333
 
+Pierre : 4 40.0
+Feuille : 3 30.0
+Ciseaux : 3 30.0
+
+Pierre : 5 41.66666666666667
+Feuille : 3 25.0
+Ciseaux : 4 33.33333333333333
+
+Pierre : 0 0.0
+Feuille : 0 0.0
+Ciseaux : 10 100.0
+
+Pierre : 0 0.0
+Feuille : 0 0.0
+Ciseaux : 8 100.0
+
+Pierre : 0 0.0
+Feuille : 0 0.0
+Ciseaux : 8 100.0
+
+Pierre : 3 33.33333333333333
+Feuille : 3 33.33333333333333
+Ciseaux : 3 33.33333333333333
+
+Pierre : 3 33.33333333333333
+Feuille : 2 22.22222222222222
+Ciseaux : 4 44.44444444444444
+
+Pierre : 1 7.142857142857142
+Feuille : 8 57.14285714285714
+Ciseaux : 5 35.714285714285715
+
+Pierre : 5 41.66666666666667
+Feuille : 4 33.33333333333333
+Ciseaux : 3 25.0
+
+Pierre : 4 33.33333333333333
+Feuille : 4 33.33333333333333
+Ciseaux : 4 33.33333333333333
+
+Pierre : 4 40.0
+Feuille : 6 60.0
+Ciseaux : 0 0.0
+
+Pierre : 8 100.0
+Feuille : 0 0.0
+Ciseaux : 0 0.0
+
+Pierre : 3 30.0
+Feuille : 4 40.0
+Ciseaux : 3 30.0
+
+Pierre : 4 30.76923076923077
+Feuille : 5 38.46153846153847
+Ciseaux : 4 30.76923076923077
+
