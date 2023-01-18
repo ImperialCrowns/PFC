@@ -57,3 +57,47 @@ def calcul_percent(p_liste : list) -> None :
     file_write = open("data.txt", 'a')
     file_write.write("Pierre : " + str(pierre) + " " + str(pierre / len(p_liste) * 100) + "\n" + "Feuille : " + str(feuille) + " " + str(feuille / len(p_liste) * 100) + "\n" + "Ciseaux : " + str(ciseaux) + " " + str(ciseaux / len(p_liste) * 100) + "\n\n")
     file_write.close()
+
+def get_data() -> dict:
+
+    '''
+    Entrée : None
+    Sortie : un dictionnaire
+    Fonction : Récupère les données de dict.txt et renvoie un dictionnaire contenant ces données
+    '''
+
+    with open("dict.txt") as f:
+        for line in f:
+            tmp = line.split(' ')
+            d = {tmp[0]: int(tmp[1]), tmp[2]: int(tmp[3]), tmp[4]: int(tmp[5])}
+    return d
+
+def format_data() -> None:
+
+    '''
+    Entrée : None
+    Sortie : None
+    Fonction : Ecrit et récupère les données dans les fichiers de données
+    '''
+
+    d = {}
+    with open("data.txt") as f :
+        for line in f :
+            if line == "\n":
+                continue
+            tmp = line.split(' ')
+            tmp[-1] = tmp[-1][0:-1]
+            tmp.pop(1)
+            if ((tmp[0]) in d) :
+                d[tmp[0]] += int(tmp[1])
+            else:
+                d[tmp[0]] = int(tmp[1])
+    total = d['Pierre'] + d['Feuille'] + d['Ciseaux']
+    p = {'Pierre': (d['Pierre'] / total) * 100, 'Feuille': (d['Feuille'] / total) * 100, 'Ciseaux': (d['Ciseaux'] / total) * 100}
+    file_write = open("dict.txt", 'w')
+    file_write.write("Pierre " + str(d["Pierre"]) + " Feuille " + str(d["Feuille"]) + " Ciseaux " + str(d["Ciseaux"]))
+    file_write.close()
+    with open("dict.txt") as f:
+        for line in f:
+            tmp = line.split(' ')
+            d = {tmp[0]: int(tmp[1]), tmp[2]: int(tmp[3]), tmp[4]: int(tmp[5])}

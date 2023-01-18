@@ -12,6 +12,8 @@ def pfc() -> None:
     Fonction : Boucle Principal, affichage, récupère les choix du joueur et de l'IA
     '''
 
+    # Ouverture du fichier data
+
     file_read = open("data.txt", "r")
     file_read.close()
 
@@ -76,7 +78,10 @@ def pfc() -> None:
 
         display.print_result_round(p_score, ia_score, p_choice, ia_choice)
 
+    # Gestion des données
+
     tools.calcul_percent(p_liste)
+    tools.format_data()
 
 
 # Fonction main, début du programme
