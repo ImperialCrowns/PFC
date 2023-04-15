@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>PFC</title>
+</head>
+<body>
+    <header>
+        <h1>Pierre Feuille Ciseaux</h1>
+    </header>
+
+    <div class="score-board">
+        <div id="user-label" class="badge">Joueur</div>
+        <div id="ia-label" class="badge">IA</div>
+        <span id="user-score">0</span>:<span id="ia-score">0</span>
+    </div>
+
+    <div class="result">
+        <p id="result">Faites un choix</p>
+    </div>
+
+    <div class="choices">
+        <div class="choice" id="rock">
+            <img src="assets/rock.png" alt="Pierre">
+        </div>
+        <div class="choice" id="paper">
+            <img src="assets/paper.png" alt="Feuille">
+        </div>
+        <div class="choice" id="scissors">
+            <img src="assets/scissors.png" alt="Ciseaux">
+        </div>
+    </div>
+
+    <p id="action-message">Fait ton choix</p>
+    <script src="app.js" charset="utf-8"></script>
+</body>
+</html>
